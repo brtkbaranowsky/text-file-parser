@@ -7,11 +7,11 @@ import java.sql.SQLException;
 public class Datasource {
 
 
-    public static final String DB_DRIVER = "jdbc:sqlite:";
-    public static final String DB_PATH = "C:\\Users\\bbar\\Desktop\\Spring\\Music\\";
-    public static final String DB_NAME = "BN.db";
+    private static final String DB_DRIVER = "jdbc:sqlite:";
+    private static final String DB_PATH = "";
+    private static final String DB_NAME = "database.sqlite";
 
-    public static final String CONNECTION_STRING = DB_DRIVER + DB_PATH + DB_NAME;
+    private static final String CONNECTION_STRING = DB_DRIVER + DB_PATH + DB_NAME;
 
     public static final String CUSTOMERS_TABLE = "customers";
     public static final String CUSTOMER_COLUMN_ID = "_id";
@@ -35,6 +35,7 @@ public class Datasource {
 
     public boolean open() {
         try (Connection connection = DriverManager.getConnection(CONNECTION_STRING)) {
+            System.out.printf("Worked");
             return true;
         } catch (SQLException e) {
             return false;
