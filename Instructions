@@ -1,0 +1,66 @@
+Czytanie danych z pliku
+
+Zaprojektuj i zaimplementuj program, który będzie czytał dane z plików tekstowych o różnych strukturach (XML oraz CSV),
+transformował je i zapisywał przeczytane do bazy danych o ustalonej strukturze.
+
+Ograniczenia techniczne
+
+Pliki wejściowe mogą mieć duży rozmiar, załadowanie ich w całości do pamięci może być kosztowne.
+Warstwa dostępu do bazy danych będzie używała wyłącznie JDBC.
+
+
+Kodowanie plików wejściowych UTF-8
+
+
+Struktura pliku XML
+
+Plik dane-osoby.xml zawiera przykładowe dane w formacie XML.
+
+Struktura pliku CSV
+
+Plik CSV składa się z wierszy w których dane oddzielone są przecinkami pierwsze kolumny to wartości:
+
+Name
+
+Surname
+
+Age
+
+City
+
+Po tych kolumnach znajdują się informacje o kontaktach do danej osoby. Ilość komun z kontaktami jest nieograniczona.
+
+Plik dane-osoby.txt zawiera przykładowe dane w formacie CSV.
+
+Dane przechowywane w bazie danych
+
+Tabela CUSTOMERS:
+
+ID
+
+NAME
+
+SURNAME
+
+Age (NULL)
+
+Tabela CONTACTS
+
+ID
+
+ID_CUSTOMER
+
+TYPE (integer - 0 - unknown, 1 - email, 2 - phone, 3- jabber)
+
+CONTACT
+
+
+Do przemyślenia
+
+Zastanów się nad architekturą wewnętrzną aplikacji.
+
+W jaki sposób sparametryzujesz konfigurację aplikacji?
+
+W jaki sposób przekażesz informację o pliku do przetworzenia?
+
+W jaki sposób rozpoznasz typ przechowywanego kontaktu?
