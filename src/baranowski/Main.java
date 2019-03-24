@@ -19,15 +19,18 @@ public class Main {
         try {
             datasource.open();
 
-            ArrayList<Customer> customers1 = readingController.parseFile(FILE_PATH_1);
-            ArrayList<Customer> customers =  readingController.parseFile(FILE_PATH_2);
+            ArrayList<Customer> customers = readingController.parseFile(FILE_PATH_2);
 
-            if(customers !=null && customers1 != null) {
+            if (customers != null) {
                 for (Customer customer : customers
                 ) {
                     logger.info(customer.toString());
                 }
+            }
 
+            logger.info("++++++++++++++++++++++++++++++++++++++++");
+            ArrayList<Customer> customers1 = readingController.parseFile(FILE_PATH_1);
+            if (customers1 != null) {
                 for (Customer customer : customers1
                 ) {
                     logger.info(customer.toString());

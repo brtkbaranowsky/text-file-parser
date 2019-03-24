@@ -45,7 +45,6 @@ public class TxtReaderService {
             String city;
             ArrayList<Contact> contacts = new ArrayList<>();
             String[] splitLine = line.split(CSV_SPLIT_BY);
-            System.out.println(splitLine);
             if (splitLine[NAME_INDEX] != null)
                 name = splitLine[NAME_INDEX];
             else {

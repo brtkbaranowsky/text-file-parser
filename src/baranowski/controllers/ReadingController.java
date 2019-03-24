@@ -8,10 +8,13 @@ import baranowski.services.XmlReaderService;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 public class ReadingController {
     private TxtReaderService txtReaderService;
     private XmlReaderService xmlReaderService;
+
+    private final Logger logger = Logger.getLogger(ReadingController.class.getName());
 
     public ReadingController() {
         this.txtReaderService = new TxtReaderService(new EmailAdressValidationService(),
@@ -21,8 +24,10 @@ public class ReadingController {
 
     public ArrayList<Customer> parseFile(String filePath) throws IOException {
         if (filePath.endsWith(".txt")) {
+            logger.info("Parsing .txt file");
             return txtReaderService.getCustomerListFromTxt(filePath);
         } else if (filePath.endsWith(".xml")) {
+            logger.info("Parsing .xml file");
             return xmlReaderService.getCustomersFromXmlFile(filePath);
         } else {
             return null;
